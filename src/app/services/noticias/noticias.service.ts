@@ -13,4 +13,8 @@ export class NoticiasService {
   verNoticias() : Observable<Noticia[]>{
     return this.http.get<Noticia[]>("https://localhost:44384/api/noticias/obtener");
   }
+
+  eliminarNoticia(noticiaId) : Observable<boolean>{
+    return this.http.delete<boolean>("https://localhost:44384/api/noticias/eliminar/" + noticiaId);
+  }
 }

@@ -8,13 +8,17 @@
 </ion-header>
 
 <ion-content >
-  <ion-card *ngFor="let noticia of noticias" (click)="detalle(noticia)">
-    <ion-card-header>
+  <ion-card *ngFor="let noticia of noticias ; let i = index" >
+    <ion-card-header (click)="detalle(noticia)">
       <ion-card-title>{{noticia.titulo}}</ion-card-title>
     </ion-card-header>  
-    <ion-card-content>{{noticia.descripcion}}
+    <ion-card-content (click)="detalle(noticia)">{{noticia.descripcion}}
       <p><strong>Autor:</strong> {{noticia.autor.nombre +" "+ noticia.autor.apellido}}</p>
       <p><strong>Fecha:</strong>{{noticia.fecha | date}}</p>
-    </ion-card-content>
+    </ion-card-content>    
+      <ion-button fill="clear" color="danger" (click)="presentAlertConfirm(noticia.noticiaID,i,noticia.titulo)">
+        <ion-icon name="trash-outline"></ion-icon>
+        Eliminar
+      </ion-button>
   </ion-card>
 </ion-content>

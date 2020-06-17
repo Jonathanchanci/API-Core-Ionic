@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'noticia-detalle',
     loadChildren: () => import('./noticia-detalle/noticia-detalle.module').then( m => m.NoticiaDetallePageModule)
+  },
+  {
+    path: 'agregar-noticia',
+    loadChildren: () => import('./agregar-noticia/agregar-noticia.module').then( m => m.AgregarNoticiaPageModule)
   }
 ];
 
