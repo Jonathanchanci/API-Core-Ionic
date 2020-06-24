@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>agregarNoticia</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar Noticia</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input type="text" [(ngModel)]="noticia.titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea row="4" [(ngModel)]="noticia.descripcion"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contenido</ion-label>
+      <ion-textarea row="8" [(ngModel)]="noticia.contenido"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-datetime displayFormat="DD, MMM, YYYY" [(ngModel)]="noticia.fecha"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Autor</ion-label>
+      <ion-select placeholder="Seleccione un autor" interface="popover" [(ngModel)]="noticia.autorID">
+        <ion-select-option *ngFor="let autor of listadoAutores" [value]="autor.autorID">{{autor.nombre + " " + autor.apellido}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" color="success" (click)="guardar()">Guardar</ion-button>
+  </ion-list>
 
 </ion-content>

@@ -13,7 +13,7 @@ import { AgregarNoticiaPage } from './agregar-noticia.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AgregarNoticiaPageRoutingModule
+    AgregarNoticiaPageRoutingModule    
   ],
   declarations: [AgregarNoticiaPage]
 })
